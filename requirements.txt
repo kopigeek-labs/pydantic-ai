@@ -4,3 +4,4 @@ nest_asyncio
 devtools
 duckduckgo-search
 tavily-python
+streamlit
