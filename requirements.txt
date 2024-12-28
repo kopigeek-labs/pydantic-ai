@@ -7,3 +7,5 @@ tavily-python
 streamlit
 logfire==2.6.2
 logfire-api==2.6.2
+asyncpg
+logfire[asyncpg]
