@@ -1,11 +1,11 @@
 python-dotenv
-pydantic-ai
-nest_asyncio
 devtools
+nest_asyncio
+pydantic-ai
+logfire==2.6.2
+logfire-api==2.6.2
+logfire[asyncpg]
 duckduckgo-search
 tavily-python
 streamlit
-logfire==2.6.2
-logfire-api==2.6.2
 asyncpg
-logfire[asyncpg]
