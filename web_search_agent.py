@@ -14,15 +14,15 @@ from dotenv import load_dotenv
 
 from openai import AsyncOpenAI
 from pydantic_ai.models.openai import OpenAIModel
-from pydantic_ai import Agent, ModelRetry, RunContext 
+from pydantic_ai import Agent, RunContext 
 
 load_dotenv()
 llm = os.getenv('LLM_MODEL', 'gpt-4o-mini')
 
-# If using local LLM
+# If using OpenAI compatible URL
 client = AsyncOpenAI(
     base_url='http://localhost:11434/v1',
-    api_key='ollama'
+    api_key='' # notneeded for ollama
 )
 
 # model picker between OpenAI or Ollama
@@ -101,9 +101,6 @@ async def search_web(
             results.append(f"Title: {title}\nSummary: {description}\n Source: {url}\n")
 
     return "\n".join(results) if results else "No results found for the query"
-
-
-
 
 async def main():
     prompt = 'Give me some articles talking about Acra and Singapore'
