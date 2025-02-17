@@ -25,7 +25,10 @@ from typing_extensions import AsyncGenerator
 from pydantic_ai import RunContext
 from pydantic_ai.agent import Agent
 
-# 'if-token-present' means nothing will be sent (and the example will work) if you don't have logfire configured
+from dotenv import load_dotenv
+load_dotenv()
+
+# # 'if-token-present' means nothing will be sent (and the example will work) if you don't have logfire configured
 logfire.configure(send_to_logfire='if-token-present')
 logfire.instrument_asyncpg()
 
@@ -171,7 +174,7 @@ async def database_connect(
     create_db: bool = False,
 ) -> AsyncGenerator[asyncpg.Pool, None]:
     server_dsn, database = (
-        'postgresql://postgres:postgres@localhost:54320',
+        'postgresql://postgres:postgres@localhost:54322', # 
         'pydantic_ai_rag',
     )
     if create_db:

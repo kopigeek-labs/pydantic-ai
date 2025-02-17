@@ -9,3 +9,4 @@ duckduckgo-search
 tavily-python
 streamlit
 asyncpg
+crawl4ai
